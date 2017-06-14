@@ -1,0 +1,15 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "starter app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "react starter"
+  },
+  "author": "shanone",
+  "license": "ISC"
+}

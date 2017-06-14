@@ -1,0 +1,90 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style media="screen">
+  *{
+
+    text-align:left;
+  }
+  h1{
+
+    color:navy;
+  }
+  h2{
+
+    margin-top:10px;
+    color:navy;
+  }
+  img{
+
+    width:200px;
+    height:200px;
+  }
+  </style>
+  <div id="container">
+
+  </div>
+  <script src="https://fb.me/react-15.0.0.js"></script>
+  <script src="https://fb.me/react-dom-15.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+
+
+
+  <!-- <script src="http://facebook.github.io/react/docs/tooling-integration.html#jsx"></script> -->
+  <script type="text/babel">
+
+const Data={
+  name:'Name is Shankar!',
+  imgURL:'http://vignette1.wikia.nocookie.net/sote-rp/images/c/c4/User-placeholder.png/revision/latest?cb=20150624004222',
+  hobbyList:['watching Movies,','programming,','camouflage with nature']
+};
+
+class Main extends React.Component{
+  render(){
+    return(
+      <div> <Photo
+      name={this.props.info.name}
+      imgURL={this.props.info.imgURL} />
+      <Bio
+      hobbyList={this.props.info.hobbyList}/></div>
+
+    );
+  }
+}
+
+class Photo extends React.Component{
+  render(){
+    return(
+      <div> <h1>  {this.props.name}</h1>
+      <img src={this.props.imgURL}/></div>
+    );
+  }
+}
+
+    class Bio extends React.Component{
+      render(){
+        return(
+<div>
+          <h2>My Hobbies:</h2>
+          <ul>{this.props.hobbyList.map((hobby,index)=>{
+              return <li key={index}>{hobby}</li>
+            })
+          }
+          </ul>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<Main info={Data}/>,document.getElementById("container"));
+  </script>
+</body>
+</html>
